@@ -129,3 +129,7 @@ Once your app is deployed, run migrations by running:
     ```
 ### That's it! 
 Now we have a live app :D. Open it from the heroku dashboard and see it live :D. Make additional requests using curl or Postman as you build your application and make more complex endpoints :).
+
+
+## Credit 
+All credits go for udacity full stack amazing nanodegree and it section Introduction to Heroku :D. 
