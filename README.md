@@ -86,3 +86,46 @@ Ps: Wenever you install new package remeber to freeze your `requirements.txt`
     requirements.text
     Setup.sh
     ```
+
+## Deploy and Test
+ After you congigure you need to add deploy it.
+
+### Create Heroku app: 
+- run this command to create hroku app. The output will include git url for your Heroku app. Copy it to use it later.
+    ```
+    heroku create name_of_your_app
+    ```
+### Add git remote for heroku to local repo
+
+- Using the git url obtained from the last step, in terminal run 
+    ```
+    git remote add heroku heroku_git_url
+    ```
+### Add postgresql add on for your database
+
+- Heroky has an addon for apps for a prostgresql databse instance: run this command to create your db and connect it to your app 
+  ```
+  heroku addons:create heroku-postgresql:hobby-dev --app name_of_your_application
+  ```
+`heroku-postgresql` is the name of the addon 
+`hobby-dev` specifies the tier of the addon, in this case free version which has limit on amount of data that will store. 
+
+- Run the under command to check your config vars in heroku 
+  ```
+  heroku config --app name_of_your_application
+  ```
+
+### Fix config in Heroku 
+- Go setting. Reval your config var and start add all the required env vars for your app. For the pupose of this app add additional one - ‘EXCITED’ and set it to `true` or `false` in all lowercase.
+
+### Push it!
+    ```
+    git push heroku maste
+    ```
+### Run migrations 
+Once your app is deployed, run migrations by running:
+    ```
+    heroku run python manage.py db upgrade --app name_of_your_application
+    ```
+### That's it! 
+Now we have a live app :D. Open it from the heroku dashboard and see it live :D. Make additional requests using curl or Postman as you build your application and make more complex endpoints :).
