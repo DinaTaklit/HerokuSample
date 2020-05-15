@@ -120,7 +120,7 @@ Ps: Wenever you install new package remeber to freeze your `requirements.txt`
 
 ### Push it!
     ```
-    git push heroku maste
+    git push heroku master
     ```
 ### Run migrations 
 Once your app is deployed, run migrations by running:
