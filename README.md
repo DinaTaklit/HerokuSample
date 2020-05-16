@@ -36,6 +36,8 @@ Gunicorn is a pure-Python HTTP server for WSGI applications. We will use it to d
     pip install gunicorn
     ```
 - Create `Procfile`. include one line to instruct Heroku correctly for us: `web: gunicorn app:app`. app is the name of your app or whatever is your application name and make sure your app is housed in that `app.py` or whatever you name your app file.
+
+> Note: the app name should be the name that we find int he main others ways you will get an error => you're telling `gunicorn` that your application's entry point is the `app` variable in th main module, if you use another name in the main it will not work :p. So be careful. Read this question=>[Failed to find application object 'app' in 'main' - Heroku CLI](https://stackoverflow.com/questions/55526763/failed-to-find-application-object-app-in-main-heroku-cli) for more details 
   
   ## Databse Migration
   
