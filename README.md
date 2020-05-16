@@ -1,4 +1,4 @@
-# Deploy and application on Heroku 
+# Deploy an application on Heroku 
 
 ## What is Heroku?
 Heroku is a cloud platforme to host applications, databases and other services in several languages. It is easy and flexible to use. It is free, with paid specialized memberships.
